@@ -1,13 +1,13 @@
 
 exports.up = function(knex) {
     return knex.schema.createTable('ingredients', tbl => {
-        tbl.increments();
-        tbl.string('ingred_name', 255).notNullable();
+        tbl.increments('ingredient_id');
+        tbl.string('ingredient', 255).notNullable();
         
     })
     .createTable('recipe', tbl => {
-        tbl.increments();
-        tbl.string('name', 255).notNullable();
+        tbl.increments('recipe_id');
+        tbl.string('recipe_name', 255).notNullable();
         tbl.integer('ingredients_id').unsigned()
         .references('id')
         .inTable('ingredients')

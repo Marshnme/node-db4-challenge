@@ -33,3 +33,5 @@ router.get('/:id/guide',(req,res) => {
         res.status(500).json({ message: 'Failed to get guide' });
     });
 })
+
+module.exports = router;
